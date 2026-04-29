@@ -1,0 +1,350 @@
+/* ==========================================================================
+   1. SISTEMA DE DISEÑO (VARIABLES)
+   ========================================================================== */
+:root {
+  /* Sunset Tech Palette */
+  --clr-primary: #e66f5c;
+  --clr-secondary: #fe9b62;
+  --clr-accent: #695c7b;
+  --clr-bg-deep: #131f2f;
+  --clr-bg-surface: #102e4d;
+  --clr-text: #f4f4f4;
+  --clr-text-muted: #a0aec0;
+
+  /* Spacing & Sizes */
+  --container-width: 1200px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-lg: 20px;
+  --glass-bg: rgba(16, 46, 77, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   2. RESET & BASE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--clr-bg-deep);
+  color: var(--clr-text);
+  line-height: 1.6;
+}
+
+/* boton de acción */
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+  background: var(--clr-primary);
+  color: var(--clr-white);
+}
+.btn:hover {
+  background: var(--clr-secondary);
+  color: var(--clr-bg-surface);
+}
+
+/* ==========================================================================
+   3. COMPONENTE: HEADER
+   ========================================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(19, 31, 47, 0.8);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header_logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--clr-text);
+  text-decoration: none;
+}
+
+.header_logo span {
+  color: var(--clr-primary);
+}
+
+.nav_list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav_link {
+  text-decoration: none;
+  color: var(--clr-text-muted);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav_link:hover {
+  color: var(--clr-primary);
+}
+
+.nav_link_btn {
+  text-decoration: none;
+  font-weight: 500;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.nav_link_btn:hover {
+  color: var(--clr-bg-surface);
+}
+
+/* ==========================================================================
+   4. COMPONENTE: HERO
+   ========================================================================== */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 180px 0px 80px; /* Espaciado superior para el header fijo */
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(105, 92, 123, 0.2),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(230, 111, 92, 0.15),
+      transparent 40%
+    );
+}
+
+.hero_container {
+  width: 90%;
+  max-width: var(--container-width);
+  display: flex;
+  flex-direction: row-reverse; /* Predeterminado: Imagen y texto lado a lado */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Bloque de Imagen */
+.hero_visual {
+  /* background-color: #fff; */
+  position: relative; /* Referencia para el posicionamiento absoluto */
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: auto;
+}
+
+.hero_img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+  transition: var(--transition);
+}
+.hero_img:hover {
+  transform: translateY(-10px);
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7));
+}
+
+/* Bloque de Contenido */
+.hero_content {
+  /* background-color: red; */
+  width: 50%;
+  text-align: left;
+}
+
+.hero_badge {
+  display: inline-block;
+  padding: 6px 15px;
+  background: rgba(230, 111, 92, 0.1);
+  border: 1px solid var(--clr-primary);
+  color: var(--clr-primary);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero_title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.hero_title span {
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero_description {
+  font-size: 1.1rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   Componente: SKILLS 
+   ========================================================================== */
+
+.skills {
+  padding: 80px 0;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skills_container {
+  /* background-color: red; */
+  width: 90%;
+  max-width: var(--container-width);
+  /* display: flex;
+  flex-direction: column;  */
+
+}
+
+.skills_grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 30px;
+  /* background-color: blue; */
+}
+
+.skill_item {
+  /* background: rgba(47, 42, 37, 0.85); */
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  text-align: center;
+  transition: var(--transition);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill_item:hover {
+  /* background: var(--glass-bg);
+  border-color: var(--clr-secondary);
+  transform: translateY(-5px); */
+
+  transform: translateY(-10px);
+  border-color: var(--clr-primary);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.skill_icon {
+  font-size: 3rem;
+  color: var(--clr-primary);
+  margin-bottom: 20px;
+  text-shadow: var(--clr-accent) 1px 1px 2px;
+}
+
+.section_title {
+  /* padding: 30px; */
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  /* text-shadow: var(--clr-text) 0px 1px 2px; */
+}
+
+
+
+
+
+
+
+
+
+.skill_title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 10px;
+  text-shadow: var(--clr-primary) 1px 1px 2px;
+}
+
+.skill_subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 15px 0 10px;
+  text-shadow: var(--clr-accent) 1px 1px 2px;
+}
+
+.skill_description {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+  list-style: none;
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD (Ajustes para Móvil)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero {
+    padding: 120px 0 60px;
+  }
+
+  .hero_container {
+    flex-direction: column; /* Apilar imagen arriba y texto abajo */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero_visual,
+  .hero_content {
+    width: 100%; /* Ocupar todo el ancho disponible */
+  }
+
+  .hero_visual {
+    max-width: 380px; /* Evitar que la imagen sea gigante en tablet */
+  }
+
+  .hero_description {
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+
+  .hero_actions {
+    justify-content: center;
+  }
+  /* --- RESPONSIVIDAD (Ajustes para Móvil) --- */
+  .hero_card {
+    /* En móvil es mejor que no flote tanto o se oculte si satura */
+    position: relative;
+    bottom: 0; /* Lo reseteamos para que no se superponga a la imagen */
+    margin-top: 20px; /* Espacio entre la imagen y la card */
+    order: 2; /* La pone debajo de la foto si prefieres */
+  }
+}

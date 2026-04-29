@@ -1,11 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi CV || Sobre Mí</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael Xavier | Systems Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="src/assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Menú de navegación -->
+    <header class="header">
+      <div class="header_container">
+        <a href="#" class="header_logo">M<span>X</span></a>
+        <nav class="nav">
+          <ul class="nav_list">
+            <li><a href="#home" class="nav_link">Inicio</a></li>
+            <li><a href="#skills" class="nav_link">Habilidades</a></li>
+            <li><a href="#about" class="nav_link">Sobre mí</a></li>
+            <li><a href="#projects" class="nav_link">Proyectos</a></li>
+            <li></li>
+          </ul>
+        </nav>
+        <a href="#contact" class="btn">Contacto</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Sección de inicio -->
+      <section id="home" class="hero">
+        <div class="hero_container">
+          <div class="hero_visual">
+            <img
+              src="src/assets/img/yo.png"
+              alt="Michael Xavier"
+              class="hero_img"
+            />
+          </div>
+
+          <div class="hero_content">
+            <span class="hero_badge">Michael Xavier C. | Systems Engineer</span>
+            <h1 class="hero_title">
+              Diseñando soluciones para el <span>futuro de la Web</span>
+            </h1>
+            <p class="hero_description">
+              Ingeniero de Sistemas apasionado por la tecnología y el desarrollo
+              web. Actualmente, mi meta es transformar retos tecnológicos
+              complejos en productos digitales innovadores, aplicando una
+              mentalidad de crecimiento continuo y un compromiso total con la
+              excelencia técnica
+            </p>
+            <a href="#Skills" class="btn"
+              >Ver habilidades <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+<!-- Sección de habilidades -->
+     <section id="skills" class="skills">
+  <div class="skills_container">
+    <h2 class="section_title">Habilidades</h2>
+    <div class="skills_grid">
+      
+      <div class="skill_item">
+        <i class="fas fa-code skill_icon"></i>
+        <h3 class="skill_title">Desarrollo Web</h3>
+        
+        <div class="skill_group">
+          <h4 class="skill_subtitle">Frontend</h4>
+          <ul class="skill_tags">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Angular</li>
+            <li>Tailwind</li>
+          </ul>
+        </div>
+
+        <div class="skill_group">
+          <h4 class="skill_subtitle">Backend</h4>
+          <ul class="skill_tags">
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>NestJS</li>
+            <li>PHP</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="skill_item">
+        <i class="fas fa-database skill_icon"></i>
+        <h3 class="skill_title">Bases de Datos</h3>
+        
+        <div class="skill_group">
+          <h4 class="skill_subtitle">Relacionales</h4>
+          <ul class="skill_tags">
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>SQL Server</li>
+          </ul>
+        </div>
+
+        <div class="skill_group">
+          <h4 class="skill_subtitle">No Relacionales</h4>
+          <ul class="skill_tags">
+            <li>MongoDB</li>
+            <li>SQLite</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    </main>
+  </body>
 </html>
