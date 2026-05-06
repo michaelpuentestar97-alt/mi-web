@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Michael Xavier | Systems Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
@@ -13,23 +14,39 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
     <link rel="stylesheet" href="src/assets/css/style.css" />
   </head>
   <body>
-    <!-- Menú de navegación -->
+    <!-- Sección de header -->
     <header class="header">
       <div class="header_container">
-        <a href="#" class="header_logo">M<span>X</span></a>
-        <nav class="nav">
+        <a href="#" class="header_logo" aria-label="Inicio"
+          >{M<span>X}</span></a
+        >
+        <!-- Botón de Hamburguesa (Solo visible en móvil) -->
+        <button class="nav_toggle" id="nav-toggle" aria-label="Abrir menú">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav class="nav" id="nav-menu">
           <ul class="nav_list">
             <li><a href="#home" class="nav_link">Inicio</a></li>
             <li><a href="#skills" class="nav_link">Habilidades</a></li>
             <li><a href="#about" class="nav_link">Sobre mí</a></li>
             <li><a href="#projects" class="nav_link">Proyectos</a></li>
-            <li></li>
+            <!-- Este contacto se muestra en el menú desplegable en móvil -->
+            <li class="nav_mobile_only">
+              <a href="#contact" class="btn">Contacto</a>
+            </li>
           </ul>
         </nav>
-        <a href="#contact" class="btn">Contacto</a>
+
+        <!-- Este contacto se queda fijo arriba en Desktop, se oculta en móvil -->
+        <a href="#contact" class="btn nav_desktop_only">Contacto</a>
       </div>
     </header>
 
@@ -40,89 +57,421 @@
           <div class="hero_visual">
             <img
               src="src/assets/img/yo.png"
-              alt="Michael Xavier"
+              alt="Retrato de Michael Xavier"
               class="hero_img"
             />
           </div>
-
           <div class="hero_content">
             <span class="hero_badge">Michael Xavier C. | Systems Engineer</span>
             <h1 class="hero_title">
               Diseñando soluciones para el <span>futuro de la Web</span>
             </h1>
             <p class="hero_description">
-              Ingeniero de Sistemas apasionado por la tecnología y el desarrollo
-              web. Actualmente, mi meta es transformar retos tecnológicos
-              complejos en productos digitales innovadores, aplicando una
-              mentalidad de crecimiento continuo y un compromiso total con la
-              excelencia técnica
+              Cerrando la brecha entre el diseño funcional y el código limpio.
+              Mi meta es transformar retos tecnológicos en productos digitales
+              memorables y accesibles.
             </p>
-            <a href="#Skills" class="btn"
-              >Ver habilidades <i class="fas fa-arrow-right"></i
-            ></a>
+            <a href="#skills" class="btn">
+              Ver habilidades
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </section>
-<!-- Sección de habilidades -->
-     <section id="skills" class="skills">
-  <div class="skills_container">
-    <h2 class="section_title">Habilidades</h2>
-    <div class="skills_grid">
+
+      <!-- Sección de habilidades -->
+      <section id="skills" class="skills">
+        <div class="skills_container">
+          <h2 class="section_title">Habilidades</h2>
+          <div class="skills_grid">
+
+            <!-- Card 1: Front & UI -->
+            <article class="skill_item">
+              <div class="skill_group">
+                <i class="fas fa-laptop-code skill_icon" aria-hidden="true"></i>
+                <h3 class="skill_title">Front & UI</h3>
+                <h4 class="skill_subtitle">Interfaces</h4>
+              </div>
+              <ul class="skill_tags">
+                <li><i class="devicon-react-original colored" aria-hidden="true"></i> React / Native</li>
+                <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i> JS / TS (ES6)</li>
+                <li><i class="devicon-html5-plain colored" aria-hidden="true"></i> HTML5 / CSS</li>
+                <li><i class="devicon-figma-plain colored" aria-hidden="true"></i> Figma / XD</li>
+              </ul>
+            </article>
+
+            <!-- Card 2: Backend & APIs -->
+            <article class="skill_item">
+              <div class="skill_group">
+                <i class="fas fa-server skill_icon" aria-hidden="true"></i>
+                <h3 class="skill_title">Backend</h3>
+                <h4 class="skill_subtitle">Core Logic</h4>
+              </div>
+              <ul class="skill_tags">
+                <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i> Node.js</li>
+                <li><i class="devicon-nestjs-plain colored" aria-hidden="true"></i>NestJS</li>
+                <li><i class="devicon-java-plain colored" aria-hidden="true"></i> Java / PHP</li>
+                <li><i class="fas fa-network-wired" aria-hidden="true"></i> APIs REST</li>
+                <li><i class="fas fa-cubes" aria-hidden="true"></i> Microservicios</li>
+              </ul>
+            </article>
+
+            <!-- Card 3: Cloud & Data -->
+            <article class="skill_item">
+              <div class="skill_group">
+                <i class="fas fa-cloud skill_icon" aria-hidden="true"></i>
+                <h3 class="skill_title">Cloud & Data</h3>
+                <h4 class="skill_subtitle">Infraestructura</h4>
+              </div>
+              <ul class="skill_tags">
+                <li><i class="devicon-amazonwebservices-plain-wordmark colored" aria-hidden="true"></i> AWS</li>
+                <li><i class="devicon-googlecloud-plain colored" aria-hidden="true"></i> GCP</li>
+                <li><i class="devicon-postgresql-plain colored" aria-hidden="true"></i> Postgres</li>
+                <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i> MySQL</li>
+                <li><i class="devicon-mongodb-plain colored" aria-hidden="true"></i> MongoDB</li>
+              </ul>
+            </article>
+
+            <!-- Card 4: DevOps & Automatización -->
+            <article class="skill_item">
+              <div class="skill_group">
+                <i class="fas fa-robot skill_icon" aria-hidden="true"></i>
+                <h3 class="skill_title">DevOps & Auto</h3>
+                <h4 class="skill_subtitle">Operaciones</h4>
+              </div>
+              <ul class="skill_tags">
+                <li><i class="devicon-docker-plain colored" aria-hidden="true"></i> Docker</li>
+                <li><i class="devicon-git-plain colored" aria-hidden="true"></i> Git</li>
+                <li><i class="fas fa-project-diagram" aria-hidden="true"></i> n8n</li>
+                <li><i class="fas fa-brain" aria-hidden="true"></i> Agentes IA</li>
+              </ul>
+            </article>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECCIÓN: SOBRE MÍ
+           ========================================================================== -->
+      <section id="about" class="about">
+        <div class="about_container">
+          
+          <div class="about_content">
+            <h2 class="section_title" style="text-align: left; margin-bottom: 20px;">Mi Filosofía Técnica</h2>
+            <p class="about_text">
+              Soy <strong>Ingeniero en Sistemas</strong> con una visión de 360° sobre la tecnología. Para mí, el desarrollo va más allá del teclado: se trata de construir herramientas que optimicen negocios y mejoren la vida de los usuarios.
+            </p>
+            <p class="about_text">
+              Mi trayectoria me ha permitido unir la robustez de la infraestructura y el backend (Node.js, NestJS) con la agilidad del desarrollo moderno de interfaces (React). Me especializo en diseñar arquitecturas eficientes y automatizar procesos críticos utilizando plataformas como n8n.
+            </p>
+            <p class="about_text">
+              Actualmente, estoy en proceso de expansión técnica hacia el futuro de la industria, preparándome para iniciar un <strong>Máster en Inteligencia Artificial en la Universitat de Barcelona</strong>. Mi objetivo es transformar retos tecnológicos complejos en productos digitales innovadores y escalables.
+            </p>
+            
+            <a href="CV_Michael Cachiguango.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--outline" style="margin-top: 20px;">
+              <i class="fas fa-file-download" aria-hidden="true"></i> Descargar CV
+            </a>
+          </div>
+
+          <div class="about_timeline">
+            <div class="timeline_item">
+              <div class="timeline_dot"></div>
+              <div class="timeline_content">
+                <span class="timeline_date">Proyección 2026</span>
+                <h4 class="timeline_title">Máster Universitario de Marketing Digital</h4>
+                <p class="timeline_subtitle">Universitat Oberta de Catalunya, España</p>
+              </div>
+            </div>
+
+            <div class="timeline_item">
+              <div class="timeline_dot"></div>
+              <div class="timeline_content">
+                <span class="timeline_date">2026</span>
+                <h4 class="timeline_title">Desenvolupament d'aplicacions amb tecnologia web</h4>
+                <p class="timeline_subtitle">IRONHACK, España</p>
+              </div>
+            </div>
+
+            <div class="timeline_item">
+              <div class="timeline_dot"></div>
+              <div class="timeline_content">
+                <span class="timeline_date">2024</span>
+                <h4 class="timeline_title">Ingeniero en Sistemas e Informática</h4>
+                <p class="timeline_subtitle">Universidad UNIANDES, Ecuador</p>
+              </div>
+            </div>
+
+            <div class="timeline_item">
+              <div class="timeline_dot"></div>
+              <div class="timeline_content">
+                <span class="timeline_date">Experiencia Clave</span>
+                <h4 class="timeline_title">Full Stack & Automation</h4>
+                <p class="timeline_subtitle">BitProy / PRODAL</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
       
-      <div class="skill_item">
-        <i class="fas fa-code skill_icon"></i>
-        <h3 class="skill_title">Desarrollo Web</h3>
-        
-        <div class="skill_group">
-          <h4 class="skill_subtitle">Frontend</h4>
-          <ul class="skill_tags">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Angular</li>
-            <li>Tailwind</li>
-          </ul>
+      <!-- ==========================================================================
+           SECCIÓN: PROYECTOS
+           ========================================================================== -->
+      <section id="projects" class="projects">
+        <div class="projects_container">
+          <h2 class="section_title">Proyectos Destacados</h2>
+
+          <div class="projects_grid">
+            <!-- Proyecto 1: Basado en BitProy -->
+            <article class="project_card">
+              <div class="project_visual">
+                <!-- Idealmente, aquí va un WebP optimizado de tu proyecto -->
+                <div class="project_placeholder">
+                  <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                </div>
+                
+              </div>
+              <div class="project_content">
+                <ul class="project_stack">
+                  <li>React Native</li>
+                  <li>TypeScript</li>
+                  <li>APIs REST</li>
+                </ul>
+
+                <h3 class="project_title">Optimización App Móvil (BitProy)</h3>
+                
+                <div class="project_links">
+                  <a
+                    href="#"
+                    class="btn_link"
+                    aria-label="Ver código fuente en GitHub"
+                  >
+                    <i class="devicon-github-original" aria-hidden="true"></i>
+                    Código
+                  </a>
+                  <a
+                    href="#"
+                    class="btn_link btn_link--primary"
+                    aria-label="Ver demostración en vivo"
+                  >
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyecto 1: Basado en BitProy -->
+            <article class="project_card">
+              <div class="project_visual">
+                <!-- Idealmente, aquí va un WebP optimizado de tu proyecto -->
+                <div class="project_placeholder">
+                  <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="project_content">
+                <ul class="project_stack">
+                  <li>React Native</li>
+                  <li>TypeScript</li>
+                  <li>APIs REST</li>
+                </ul>
+                <h3 class="project_title">Optimización App Móvil (BitProy)</h3>
+
+                <div class="project_links">
+                  <a
+                    href="#"
+                    class="btn_link"
+                    aria-label="Ver código fuente en GitHub"
+                  >
+                    <i class="devicon-github-original" aria-hidden="true"></i>
+                    Código
+                  </a>
+                  <a
+                    href="#"
+                    class="btn_link btn_link--primary"
+                    aria-label="Ver demostración en vivo"
+                  >
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyecto 2: Basado en tu perfil Backend/n8n -->
+            <article class="project_card">
+              <div class="project_visual">
+                <div class="project_placeholder">
+                  <i class="fas fa-network-wired" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="project_content">
+                <ul class="project_stack">
+                  <li>Node.js</li>
+                  <li>NestJS</li>
+                  <li>n8n</li>
+                  <li>PostgreSQL</li>
+                </ul>
+                <h3 class="project_title">Arquitectura y Automatización</h3>
+               
+                <div class="project_links">
+                  <a
+                    href="#"
+                    class="btn_link"
+                    aria-label="Ver código fuente en GitHub"
+                  >
+                    <i class="devicon-github-original" aria-hidden="true"></i>
+                    Código
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyecto 3: Basado en PRODAL -->
+            <article class="project_card">
+              <div class="project_visual">
+                <img
+                  src="src/assets/img/img_web/ejem1.png"
+                  alt="Captura de pantalla de la interfaz del proyecto [Nombre del Proyecto]"
+                  class="project_img"
+                />
+                <!-- <div class="project_placeholder">
+                  <i class="fas fa-server" aria-hidden="true"></i>
+                </div> -->
+              </div>
+              <div class="project_content">
+                <ul class="project_stack">
+                  <li>React</li>
+                  <li>Docker</li>
+                  <li>Sistemas Operativos</li>
+                </ul>
+                <h3 class="project_title">
+                  Dashboard de Continuidad Operativa
+                </h3>
+                
+                <div class="project_links">
+                  <a
+                    href="#"
+                    class="btn_link"
+                    aria-label="Ver código fuente en GitHub"
+                  >
+                    <i class="devicon-github-original" aria-hidden="true"></i>
+                    Código
+                  </a>
+                  <a
+                    href="#"
+                    class="btn_link btn_link--primary"
+                    aria-label="Ver casos de estudio"
+                  >
+                    <i class="fas fa-file-alt" aria-hidden="true"></i> Detalle
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div class="skill_group">
-          <h4 class="skill_subtitle">Backend</h4>
-          <ul class="skill_tags">
-            <li>Node.js</li>
-            <li>Express</li>
-            <li>NestJS</li>
-            <li>PHP</li>
-          </ul>
+      <!-- ==========================================================================
+           SECCIÓN: CONTACTO
+           ========================================================================== -->
+      <section id="contact" class="contact">
+        <div class="contact_container">
+          <h2 class="section_title">Hablemos del próximo reto</h2>
+          
+          <div class="contact_wrapper">
+            
+            <!-- Bloque Izquierdo: Información Directa -->
+            <div class="contact_info">
+              <h3 class="contact_subtitle">Información de Contacto</h3>
+              <p class="contact_text">
+                ¿Tienes un proyecto en mente, un cuello de botella técnico o una oportunidad en tu equipo? Escríbeme y evaluemos cómo puedo aportar valor.
+              </p>
+              
+              <ul class="contact_details">
+                <li>
+                  <i class="fas fa-envelope" aria-hidden="true"></i> 
+                  <a href="mailto:xavierpuentestar97@gmail.com">xavierpuentestar97@gmail.com</a>
+                </li>
+                <li>
+                  <i class="fas fa-phone-alt" aria-hidden="true"></i> 
+                  <a href="tel:+34623556627">+34 623 556 627</a>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i> 
+                  <span>Sant Cugat del Vallès, Barcelona</span>
+                </li>
+              </ul>
+
+              <div class="contact_social">
+                <a href="https://www.linkedin.com/in/michael-cachiguango-puentestar" aria-label="LinkedIn">
+                  <i class="devicon-linkedin-plain" aria-hidden="true"></i>
+                </a>
+                <!-- Si tienes un GitHub público, añade el enlace aquí -->
+                <a href="https://github.com/michaelpuentestar97-alt" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <i class="devicon-github-original" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Bloque Derecho: Formulario Estructurado -->
+            <form class="contact_form" action="#" method="POST">
+              <div class="form_grid">
+                
+                <div class="form_group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                </div>
+                
+                <div class="form_group">
+                  <label for="apellido">Apellido</label>
+                  <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido">
+                </div>
+
+                <div class="form_group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+
+                <div class="form_group">
+                  <label for="telefono">Teléfono</label>
+                  <input type="tel" id="telefono" name="telefono" placeholder="+34 ...">
+                </div>
+
+              </div>
+
+              <div class="form_group">
+                <label for="asunto">Asunto</label>
+                <select id="asunto" name="asunto" required>
+                  <option value="" disabled selected>Selecciona un motivo...</option>
+                  <option value="oportunidad">Oportunidad Laboral</option>
+                  <option value="freelance">Proyecto Freelance / Consultoría</option>
+                  <option value="automatizacion">Automatización de Procesos (n8n)</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+
+              <div class="form_group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntame sobre tu proyecto o equipo..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--full">
+                Enviar Mensaje <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              </button>
+            </form>
+
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="skill_item">
-        <i class="fas fa-database skill_icon"></i>
-        <h3 class="skill_title">Bases de Datos</h3>
-        
-        <div class="skill_group">
-          <h4 class="skill_subtitle">Relacionales</h4>
-          <ul class="skill_tags">
-            <li>MySQL</li>
-            <li>PostgreSQL</li>
-            <li>SQL Server</li>
-          </ul>
-        </div>
-
-        <div class="skill_group">
-          <h4 class="skill_subtitle">No Relacionales</h4>
-          <ul class="skill_tags">
-            <li>MongoDB</li>
-            <li>SQLite</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
+      <!-- Pie de página simple -->
+      <footer class="footer">
+        <p>&copy; Michael Xavier Cachiguango. Diseñado y Desarrollado con código limpio.</p>
+      </footer>
+      
     </main>
   </body>
+  <script src="src/assets/js/main.js"></script>
 </html>
